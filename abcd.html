@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class 9 Math Chapter 1 Quiz</title>
+    <link rel="stylesheet" href="css\styles.css">
+</head>
+<body>
+    <h1>My quiz</h1>
+    <hr />
+    <div id="quiz"></div>
+    <hr />
+    <button id="submitBtn">Submit</button>
+    <div id="results" style="display: none;"></div>
+
+    <script>
+        const questions = [
+    {
+        question: "Who will be the next president of india?",
+        options: ["Abdul Garu", "Mohapatra", "Prewm Garu", "ABCd"],
+        correctAnswer: "Abdul Garu",
+        explanation: "Abdul Garu is popular personality in our country" 
+    },
+    {
+        question: "What is the decimal expansion of 3/8?",
+        options: ["0.375", "0.025", "0.5", "0.25"],
+        correctAnswer: "0.375",
+        explanation: "3/8 = 0.375 when expressed in decimal form."
+    },
+    {
+        question: "If a = 5 and b = 7, what is the value of a + b?",
+        options: ["10", "12", "35", "2"],
+        correctAnswer: "12",
+        explanation: "a + b = 5 + 7 = 12."
+    },
+    {
+        question: "Which of the following is a prime number?",
+        options: ["15", "29", "35", "44"],
+        correctAnswer: "29",
+        explanation: "29 is a prime number as it has no divisors other than 1 and itself."
+    },
+    {
+        question: "What is the sum of all interior angles in a triangle?",
+        options: ["90 degrees", "180 degrees", "270 degrees", "360 degrees"],
+        correctAnswer: "180 degrees",
+        explanation: "The sum of interior angles in a triangle is always 180 degrees."
+    },
+    {
+        question: "What is the square root of 144?",
+        options: ["12", "24", "144", "11"],
+        correctAnswer: "12",
+        explanation: "√144 = 12."
+    },
+    {
+        question: "Which type of angle measures exactly 90 degrees?",
+        options: ["Acute angle", "Obtuse angle", "Right angle", "Straight angle"],
+        correctAnswer: "Right angle",
+        explanation: "A right angle measures exactly 90 degrees."
+    },
+    {
+        question: "In a parallelogram, opposite sides are ________.",
+        options: ["Equal", "Perpendicular", "Parallel", "Unequal"],
+        correctAnswer: "Parallel",
+        explanation: "In a parallelogram, opposite sides are parallel."
+    },
+    {
+        question: "What is the area of a rectangle with length 8 units and width 5 units?",
+        options: ["13 sq. units", "40 sq. units", "25 sq. units", "64 sq. units"],
+        correctAnswer: "40 sq. units",
+        explanation: "Area = length × width = 8 × 5 = 40 sq. units."
+    },
+    {
+        question: "What is the value of π (pi) approximately?",
+        options: ["3.14", "22/7", "1.618", "2.718"],
+        correctAnswer: "3.14",
+        explanation: "π is approximately equal to 3.14."
+    }
+];
+
+// Rest of the script
+
+
+        const quizContainer = document.getElementById("quiz");
+        const submitButton = document.getElementById("submitBtn");
+        const resultsDiv = document.getElementById("results");
+
+        let score = 0;
+
+        questions.forEach((questionObj, index) => {
+            const questionDiv = document.createElement("div");
+            questionDiv.innerHTML = `<p>${index + 1}. ${questionObj.question}</p>`;
+            questionObj.options.forEach(option => {
+                questionDiv.innerHTML += `<label><input type="radio" name="q${index}" value="${option}">${option}</label><br>`;
+            });
+            quizContainer.appendChild(questionDiv);
+        });
+
+        submitButton.addEventListener("click", calculateScore);
+
+        function calculateScore() {
+            score = 0;
+
+            questions.forEach((questionObj, index) => {
+                const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selectedOption && selectedOption.value === questionObj.correctAnswer) {
+                    score++;
+                }
+            });
+            
+        
+
+            showResults();
+        }
+
+        function showResults() {
+            quizContainer.style.display = "none";
+            submitButton.style.display = "none";
+
+            resultsDiv.style.display = "block";
+            resultsDiv.innerHTML = `<h2>Your Score: ${score} / ${questions.length}</h2>`;
+        }
+    </script>
+</body>
+</html>
