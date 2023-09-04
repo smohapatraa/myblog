@@ -1,0 +1,85 @@
+/* Reset default margin and padding */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font-size: 15px;
+    font-family: "Lato", sans-serif; /* Set a sans-serif font */
+    line-height: 140%;
+    max-width: 65ch; /* Sets maximum line length to 60 characters */
+    margin: 0 auto; /* Centers the content horizontally */
+    padding: 20px; /* Adds some spacing around the content */
+    background-color: #e3ecf8; /* Set the background color */
+    color: #181515; /* Set a suitable font color for readability */
+}
+
+header, nav, main, footer {
+    margin:0; /* Adds spacing between sections */
+    padding: 1px;
+    	
+}
+.header-image {
+    width: 100%; /* Stretch the image to the full width of the header */
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1
+{
+    margin-bottom: 10px; /* Adds spacing below headings */
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px; /* Adds spacing below headings */
+   font-size: 20px;
+   margin-bottom: 25px;
+}
+
+ul {
+    
+    gap: 20px; /* Adjust spacing between links */
+    padding: 0;
+}
+
+p {
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Sets link color to blue */
+    margin-bottom: 20px;
+    
+}
+
+a:hover {
+    text-decoration: underline; /* Underlines links on hover */
+}
+.test {
+    width: 700px;
+    height: 200px;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("File:///D:/blog/a.jpeg");
+    position: relative;
+}
+
+.test h1 {
+    font-size: 23px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    position: absolute;
+    top: 160px;
+    left: 22px;
+
+}
+n
+}
